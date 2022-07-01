@@ -1,9 +1,9 @@
 package com.acoustic.controller;
 
 
-import com.acoustic.entity.PensionZus;
+import com.acoustic.entity.SicknessZus;
 import com.acoustic.rate.RatesConfigurationProperties;
-import com.acoustic.repository.PensionZusRepository;
+import com.acoustic.repository.SicknessZusRepository;
 import com.acoustic.service.SalaryCalculatorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -19,20 +19,20 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping("/pensionZus")
+@RequestMapping("/sicknessZus")
 @RequiredArgsConstructor
 @Validated
-public class TotalZusController {
+public class SicknessZusController {
 
-    private final PensionZusRepository pensionZusRepository;
+    private final SicknessZusRepository sicknessZusRepository;
     private final SalaryCalculatorService salaryCalculatorService;
     private final RatesConfigurationProperties ratesConfigurationProperties;
 
 
-    @PostMapping("/getPensionZus/{grossMonthlySalary}")
-    public Map<String, BigDecimal> calculateTotalZus(@PathVariable @Min(2000)BigDecimal grossMonthlySalary){
+    @PostMapping("/getSicknessZus/{grossMonthlySalary}")
+    public Map<String, BigDecimal> calculateSicknessZus(@PathVariable @Min(2000)BigDecimal grossMonthlySalary){
         var totalZus = salaryCalculatorService.apply(grossMonthlySalary);
-        this.pensionZusRepository.save(PensionZus.builder().pensionZusAmount(totalZus).pensionZusRate(ratesConfigurationProperties.getPensionZusRate()).build());
+        this.sicknessZusRepository.save(SicknessZus.builder().sicknessZusAmount(totalZus).sicknessZusRate(ratesConfigurationProperties.getSicknessZusRate()).build());
         return new LinkedHashMap<>(Map.of(salaryCalculatorService.getDescription(), totalZus));
     }
 }

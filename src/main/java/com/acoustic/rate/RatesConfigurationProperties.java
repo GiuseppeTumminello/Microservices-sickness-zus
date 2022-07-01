@@ -16,6 +16,6 @@ import java.math.BigDecimal;
 @Configuration
 public class RatesConfigurationProperties {
 
-    private BigDecimal pensionZusRate;
+    private BigDecimal sicknessZusRate;
 
 }

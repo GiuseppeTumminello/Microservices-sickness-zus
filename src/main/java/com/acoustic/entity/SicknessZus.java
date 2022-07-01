@@ -18,14 +18,14 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PensionZus {
+public class SicknessZus {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
-    private BigDecimal pensionZusAmount;
+    private BigDecimal sicknessZusAmount;
 
-    private BigDecimal pensionZusRate;
+    private BigDecimal sicknessZusRate;
 
 
 }

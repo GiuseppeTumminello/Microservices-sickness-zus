@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class PensionZusApplication {
+public class SicknessZusApplication {
     public static void main(String[] args) {
-        SpringApplication.run(PensionZusApplication.class, args);
+        SpringApplication.run(SicknessZusApplication.class, args);
     }
 }

@@ -22,21 +22,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-class PensionZusControllerTest {
+class SicknessZusControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
     @Autowired
     private ObjectMapper objectMapper;
 
-    private final String PENSION_ZUS_ENDPOINT = "/pensionZus/getPensionZus/";
+    private final String SICKNESS_ZUS_ENDPOINT = "/sicknessZus/getSicknessZus/";
 
 
     @ParameterizedTest
-    @CsvSource({"6000, 90.00", "7000, 105.00", "8555,128.32", "15143.99,227.16"})
-    public void calculateTotalZus(BigDecimal input, BigDecimal totalZus) throws Exception {
-        var expected = this.objectMapper.writeValueAsString(Map.of("Pension zus", totalZus));
-        this.mockMvc.perform(post(PENSION_ZUS_ENDPOINT + input).contentType(MediaType.APPLICATION_JSON))
+    @CsvSource({"6000, 147.00", "7000, 171.50", "8555,209.60", "15143.99,371.03"})
+    public void calculateSicknessZus(BigDecimal input, BigDecimal sicknessZus) throws Exception {
+        var expected = this.objectMapper.writeValueAsString(Map.of("Sickness zus", sicknessZus));
+        this.mockMvc.perform(post(SICKNESS_ZUS_ENDPOINT + input).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string(expected));
     }

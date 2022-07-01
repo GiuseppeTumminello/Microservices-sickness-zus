@@ -3,10 +3,10 @@ package com.acoustic.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.acoustic.entity.PensionZus;
+import com.acoustic.entity.SicknessZus;
 
 @Repository
-public interface PensionZusRepository extends JpaRepository<PensionZus, Long> {
+public interface SicknessZusRepository extends JpaRepository<SicknessZus, Long> {
 
 
 

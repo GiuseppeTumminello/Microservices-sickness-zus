@@ -16,11 +16,11 @@ public class PensionZusService implements SalaryCalculatorService{
 
     @Override
     public String getDescription() {
-        return "Pension zus";
+        return "Sickness zus";
     }
 
     @Override
     public BigDecimal apply(final BigDecimal grossMonthlySalary) {
-        return grossMonthlySalary.multiply(ratesConfigurationProperties.getPensionZusRate()).setScale(2, RoundingMode.HALF_EVEN);
+        return grossMonthlySalary.multiply(ratesConfigurationProperties.getSicknessZusRate()).setScale(2, RoundingMode.HALF_EVEN);
     }
 }
