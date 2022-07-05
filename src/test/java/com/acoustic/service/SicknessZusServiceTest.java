@@ -27,7 +27,7 @@ class SicknessZusServiceTest {
 
     @Test
     void getDescription() {
-        assertThat(salaryCalculatorService.getDescription()).isEqualTo(SICKNESS_ZUS_DESCRIPTION);
+        assertThat(this.salaryCalculatorService.getDescription()).isEqualTo(SICKNESS_ZUS_DESCRIPTION);
     }
 
     @ParameterizedTest
