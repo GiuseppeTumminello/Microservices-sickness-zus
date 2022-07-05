@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 @Builder
 public class SicknessZus {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private BigDecimal sicknessZusAmount;
