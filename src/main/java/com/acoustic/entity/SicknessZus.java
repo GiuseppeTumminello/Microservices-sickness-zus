@@ -3,7 +3,6 @@ package com.acoustic.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
@@ -14,7 +13,6 @@ import java.math.BigDecimal;
 
 
 @Entity
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -25,7 +23,6 @@ public class SicknessZus {
 
     private BigDecimal sicknessZusAmount;
 
-    private BigDecimal sicknessZusRate;
 
 
 }

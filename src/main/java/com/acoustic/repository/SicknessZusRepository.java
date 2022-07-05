@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.acoustic.entity.SicknessZus;
 
 @Repository
-public interface SicknessZusRepository extends JpaRepository<SicknessZus, Long> {
+public interface SicknessZusRepository extends JpaRepository<SicknessZus, Integer> {
 
 
 
