@@ -14,21 +14,21 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping("/sicknessZus")
+@RequestMapping("/sickness-zus")
 @RequiredArgsConstructor
 @Validated
 @CrossOrigin
 public class SicknessZusController {
 
     private static final String DESCRIPTION = "description";
-    private static final String VALUE = "value";
+    static final String VALUE = "value";
 
     private final SicknessZusRepository sicknessZusRepository;
     private final SalaryCalculatorService salaryCalculatorService;
 
 
 
-    @PostMapping("/getSicknessZus/{grossMonthlySalary}")
+    @PostMapping("/calculation/{grossMonthlySalary}")
     public Map<String, String> calculateSicknessZus(@PathVariable @Min(2000)BigDecimal grossMonthlySalary){
         var sicknessZus = this.salaryCalculatorService.apply(grossMonthlySalary);
         this.sicknessZusRepository.save(SicknessZus.builder().sicknessZusAmount(sicknessZus).build());

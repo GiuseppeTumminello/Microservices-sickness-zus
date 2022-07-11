@@ -27,7 +27,7 @@ class SicknessZusControllerTest {
     public static final String DESCRIPTION = "description";
     public static final String SICKNESS_ZUS_DESCRIPTION = "Sickness zus";
     public static final String VALUE = "value";
-    private final String SICKNESS_ZUS_ENDPOINT = "/sicknessZus/getSicknessZus/";
+    private final String SICKNESS_ZUS_ENDPOINT = "/sickness-zus/calculation/";
     @Autowired
     private MockMvc mockMvc;
     @Autowired
