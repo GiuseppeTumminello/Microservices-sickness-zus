@@ -6,10 +6,7 @@ import com.acoustic.repository.SicknessZusRepository;
 import com.acoustic.service.SalaryCalculatorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.Min;
 import java.math.BigDecimal;
@@ -20,10 +17,11 @@ import java.util.Map;
 @RequestMapping("/sicknessZus")
 @RequiredArgsConstructor
 @Validated
+@CrossOrigin
 public class SicknessZusController {
 
-    public static final String DESCRIPTION = "description";
-    public static final String VALUE = "value";
+    private static final String DESCRIPTION = "description";
+    private static final String VALUE = "value";
 
     private final SicknessZusRepository sicknessZusRepository;
     private final SalaryCalculatorService salaryCalculatorService;
