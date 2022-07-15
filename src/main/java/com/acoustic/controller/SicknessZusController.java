@@ -22,6 +22,7 @@ public class SicknessZusController {
 
     private static final String DESCRIPTION = "description";
     static final String VALUE = "value";
+    public static final int MINIMUM_GROSS = 2000;
 
     private final SicknessZusRepository sicknessZusRepository;
     private final SalaryCalculatorService salaryCalculatorService;
@@ -29,7 +30,7 @@ public class SicknessZusController {
 
 
     @PostMapping("/calculation/{grossMonthlySalary}")
-    public Map<String, String> calculateSicknessZus(@PathVariable @Min(2000)BigDecimal grossMonthlySalary){
+    public Map<String, String> calculateSicknessZus(@PathVariable @Min(MINIMUM_GROSS)BigDecimal grossMonthlySalary){
         var sicknessZus = this.salaryCalculatorService.apply(grossMonthlySalary);
         this.sicknessZusRepository.save(SicknessZus.builder().sicknessZusAmount(sicknessZus).build());
         return  Map.of(DESCRIPTION,this.salaryCalculatorService.getDescription(), VALUE, String.valueOf(sicknessZus));
